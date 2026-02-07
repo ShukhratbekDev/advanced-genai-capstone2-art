@@ -4,36 +4,34 @@
 
 ---
 
-## 1. Book Cover: *1984* by George Orwell
+## 1. Book Cover: *The Witcher: The Last Wish* by Andrzej Sapkowski
 
 ### Original Work
-![Original 1984 Cover](data/original_book.jpg)
-*Description: The classic minimalistic cover featuring the "Big Brother is Watching You" eye.*
+![Original Witcher Cover](data/original_book.jpg)
+*Description: The iconic cover featuring the silver wolf medallion and a gritty fantasy aesthetic.*
 
 ### AI-Generated Variation
-![AI 1984 Cover](data/ai_generated_book.jpg)
-*Variation: A hyper-realistic brutalist interpretation of total surveillance.*
+![AI Witcher Cover](data/ai_generated_book.png)
+*Variation: A hyper-realistic, cinematic interpretation of Geralt in a monster-infested forest.*
 
 ### Workflow & Technical Details
-- **Model:** Flux.1 Dev FP8 (Quantized for Local Deployment)
-- **Source:** [Flux.1 Dev on HuggingFace](https://huggingface.co/black-forest-labs/FLUX.1-dev)
+- **Model:** Flux.2 [klein] 4B
+- **Source:** [Flux.2 [klein] on HuggingFace](https://huggingface.co/black-forest-labs/FLUX.1-dev-klein) 
 - **Hardware:** MacBook Pro M1, 16GB RAM
 - **WebUI:** ComfyUI (Local)
 - **Parameters:**
-  - **Steps:** 25
+  - **Steps:** 20
   - **Sampler:** euler
   - **Scheduler:** simple
-  - **CFG:** 1.0
-  - **Distilled Guidance:** 3.5
+  - **CFG:** 5.0
   - **Resolution:** 896 x 1152 (Poster Ratio)
 
-### Prompt
-> "A professional book cover for George Orwell's 1984. A massive, hyper-realistic mechanical eye integrated into a brutalist concrete skyscraper. The iris of the eye is a glowing CCTV screen monitor. Cold, cinematic lighting, neon red highlights, dark moody atmosphere. 8k resolution, cinematic grain, dystopian aesthetic."
+### Prompts
+- **Positive:** "A professional book cover for The Witcher. Geralt of Rivia with silver white hair standing in a dark, misty ancient forest. He is holding a glowing silver sword, wearing leather and chainmail armor with a wolf medallion. A terrifying monster silhouette in the background mist. Dark fantasy aesthetic, cinematic lighting, hyper-realistic, 8k resolution, moody atmosphere."
 
 ### Execution Screenshot
 ![ComfyUI Pipeline Screenshot](data/screenshot_book_workflow1.png)
 ![ComfyUI Pipeline Screenshot](data/screenshot_book_workflow2.png)
-![ComfyUI Pipeline Screenshot](data/screenshot_book_workflow3.png)
 
 ---
 
@@ -44,27 +42,26 @@
 *Description: The iconic split gold and silver helmets on a black background.*
 
 ### AI-Generated Variation
-![AI Daft Punk Cover](data/ai_generated_album.jpg)
+![AI Daft Punk Cover](data/ai_generated_album.png)
 *Variation: Liquid mercury sculptural interpretation of the robotic helmets.*
 
 ### Workflow & Technical Details
-- **Model:** Flux.1 Dev FP8
+- **Model:** Flux.2 [klein] 4B
 - **Hardware:** MacBook Pro M1, 16GB RAM
 - **WebUI:** ComfyUI (Local)
 - **Parameters:**
   - **Steps:** 20
   - **Sampler:** euler
-  - **Scheduler:** beta
-  - **CFG:** 1.0
+  - **Scheduler:** simple
+  - **CFG:** 5.0
   - **Resolution:** 1024 x 1024 (Square Vinyl)
 
-### Prompt
-> "Conceptual vinyl album cover for Daft Punk. Two futuristic robotic helmets partially melted into a pool of liquid iridescent mercury. Reflections of a vibrant sunset and city lights on the chrome surface. Deep black background with fine cosmic dust. High-end product photography, soft studio lighting, sharp focus, 8k, elegant and premium."
+### Prompts
+- **Positive:** "A premium vinyl record cover for Daft Punk's Random Access Memories. Two iconic robotic helmets, one gold and one silver, set against a deep black void. The helmets are glowing with intricate circuitry patterns. Reflections of a futuristic neon city on the polished chrome surfaces. Cinematic studio lighting, sharp focus, high-end product photography, 8k, elegant and premium design."
 
 ### Execution Screenshot
 ![ComfyUI Pipeline Screenshot](data/screenshot_album_workflow1.png)
 ![ComfyUI Pipeline Screenshot](data/screenshot_album_workflow2.png)
-![ComfyUI Pipeline Screenshot](data/screenshot_album_workflow3.png)
 
 ---
 
@@ -75,49 +72,48 @@
 *Description: Representative image of an astronaut or the Endurance ship.*
 
 ### AI-Generated Variation
-![AI Interstellar Cover](data/ai_generated_movie.jpg)
+![AI Interstellar Cover](data/ai_generated_movie.png)
 *Variation: Celestial event focus featuring the Gargantua black hole.*
 
 ### Workflow & Technical Details
-- **Model:** Flux.1 Dev FP8
+- **Model:** Flux.2 [klein] 4B
 - **Hardware:** MacBook Pro M1, 16GB RAM
 - **WebUI:** ComfyUI (Local)
 - **Parameters:**
-  - **Steps:** 25
+  - **Steps:** 20
   - **Sampler:** euler
   - **Scheduler:** simple
-  - **CFG:** 1.0
+  - **CFG:** 5.0
   - **Resolution:** 832 x 1216 (DVD Ratio)
 
-### Prompt
-> "A cinematic DVD cover for the movie Interstellar. A breathtaking close-up of a supermassive black hole 'Gargantua' with a glowing golden accretion disk bending time and space. A tiny, fragile spaceship silhouette in the foreground against the vastness of the cosmos. Hyper-realistic, lens flare, deep blues and glowing golds, IMAX quality, epic scale."
+### Prompts
+- **Positive:** "A breathtaking cinematic DVD box cover for the movie Interstellar. The massive, spinning accretion disk of the black hole Gargantua glowing with intense amber and white light bending around the event horizon. The tiny Endurance spacecraft silhouetted against the colossal light. Beautiful lens flares, cosmic dust, deep space background. Hyper-realistic, epic scale, IMAX cinematic quality, 8k resolution."
 
 ### Execution Screenshot
 ![ComfyUI Pipeline Screenshot](data/screenshot_movie_workflow1.png)
 ![ComfyUI Pipeline Screenshot](data/screenshot_movie_workflow2.png)
-![ComfyUI Pipeline Screenshot](data/screenshot_movie_workflow3.png)
 
 ---
 
 ## Resources Used
-- **Software:** ComfyUI (v0.10.0)
+- **Software:** ComfyUI (v0.8.2)
 - **Environment:** Local installation on macOS (Darwin)
 - **Acceleration:** Apple Silicon (MPS / Metal Performance Shaders)
-- **Model Files:** `flux1-dev-fp8.safetensors`, `ae.safetensors`, `clip_l.safetensors`, `t5xxl_fp8_e4m3fn.safetensors`
+- **Model Files:** `flux-2-klein-base-4b.safetensors`, `qwen_3_4b.safetensors`, `flux2-vae.safetensors`
 
 ---
 
 ## Hardware Constraints & Optimization Strategy
-Running Flux.1 Dev locally on a **MacBook Pro M1 with 16GB RAM** presents significant memory management challenges. During the initial execution, a `RuntimeError: MPS backend out of memory` was encountered due to the high VRAM requirements of the model and text encoders.
+Running ultra-high-parameter models like Flux.1 Dev locally on a **MacBook Pro M1 with 16GB RAM** revealed critical physical constraints. While the system's "Swap" architecture allows for over-allocation, the extreme size of Flux (12-24GB) leads to frequent backend timeouts and system instability.
 
 ### Challenges Encountered:
-- **Unified Memory Bottleneck:** macOS reserves a portion of the 16GB RAM for the system, leaving roughly 12-13GB for the GPU. The full **T5XXL (FP16)** text encoder alone consumes ~10GB, leaving insufficient room for the Flux model (~12GB) and latent processing.
-- **KSampler Crashes:** High-resolution generation (1024x1024) caused the MPS backend to exceed its allocation limit (18.13 GiB total including swap), resulting in process termination.
+- **Unified Memory Saturation:** Flux requires the T5XXL text encoder, which occupies nearly 10GB of RAM alone. In a 16GB shared-memory architecture, this leaves virtually no room for the actual Diffusion UNet.
+- **Process Termination:** macOS kills processes that exceed safe swap limits, causing the "Reconnecting" errors seen during testing.
 
-### Optimization Techniques Implemented:
-1. **Double Quantization:** 
-   - Switched the main model to **Flux.1 Dev FP8**.
-   - Replaced the text encoder with **T5XXL FP8 (e4m3fn)**, reducing its memory footprint from 10GB to ~4.8GB.
-2. **Weight Offloading:** Configured ComfyUI to offload the CLIP and T5 models to CPU/System RAM immediately after encoding, freeing up the "GPU" (Unified Memory) for the diffusion process.
-3. **Resolution Downscaling:** Adjusted generation targets to 896px on the long edge to stay within the safe bounds of the MPS private pool.
-4. **Environment Tweaks:** (If applicable) Utilized `PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0` to prevent the OS from hard-capping memory allocations during peak sampling steps.
+### Final Optimization & Model Selection:
+The project ultimately adopted **Flux.2 [klein] 4B** as the production model:
+
+1. **Strategic Distillation:** Used the **4B (4 Billion parameter)** variant of the Flux.2 architecture. This provides the superior image and text quality of the Flux family while fitting comfortably within the 16GB RAM limit of the M1 Mac.
+2. **Balanced Performance:** While slower than SDXL-Turbo, it avoids the "Reconnecting" crashes of the 12B/9B Flux models by maintaining a total memory footprint of approximately 6-8GB.
+3. **Optimized VRAM Usage:** Enabled **LOW_VRAM** mode and utilized **CPU-based preprocessing** for the CLIP encoders to preserve the GPU's memory pool for the primary sampling process.
+4. **Data Type Management:** Utilized BFloat16 tensors to ensure high precision on the Apple Silicon MPS backend while avoiding unsupported FP8 native operations.
